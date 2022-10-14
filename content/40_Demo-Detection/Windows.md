@@ -1,76 +1,84 @@
 ---
-title: "ZTSA - Internet Access Control"
+title: "Windows"
 chapter: false
-weight: 41
-pre: "<b>4.1 </b>"
+weight: 42
+pre: "<b>4.2 </b>"
 ---
-## ZTSA – Internet Access Control 
-
-### Activating the ZTSA Module
-To allow the users to access the Internet using the Zero Trust Infrastructure, the ZTSA Module is required to be installed and activated. 
-
-The first step that must be executed is the deployment of the ZTSA Module to the VPC2_WindowsClient. You can do that using the Zero Trust Secure Access > Secure Access Configuration > Secure Access Module menu and selecting the new Windows Instance and select Deploy Module.
-
-After you select the Deploy Module option, you can monitor the ZTSA Module Installation by monitoring the Task Manager on the VPC2_WindowsClient Instance. The installation process usually takes 2 to 3 minutes.
-![Endpoint_Deployment](/images/ztsa-module.png)
-
-The ZTSA Module deployment requires normally 3 to 5 minutes to be finished. After the deployment is done, you will find a new Trend Micro ZTSA shortcut on the VPC2_WindowsClient desktop.
-![Endpoint_Deployment](/images/ztsa-module-desktop.png)
-
+## Windows - Detection Mode
 ---
 
-### ZTSA – Internet Access Control - Creating the First Policy
-Configure an internet access control rule to protect your users' internet access whether they are on or off your corporate network.
-
-On the Secure Access Rules screen, click the Internet Access Control tab, then click Create Rule and follow the instructions described below:
-![Endpoint_Deployment](/images/ztsa-internet1.png)
-
-        _Basic information
-        Rule Name: Zero Trust Internet Access Rule
-
-        _Source
-        User/Groups/Private IP Groups: All users/groups
-
-        Locations: All locations
-
-        _Traffic
-        URLs/Cloud Apps: Any traffic
-
-        File types: Any file
-
-        _Schedule
-        Schedule: Always
-
-        _Action
-        Access Control: Monitor URL/Cloud app access
-
-        Advanced security settings: x Enable Threat Protection / Default Threat Protection Rule
+### ATT&CK Phases
+#### Reconnaissance
+This step was skipped because we knew the target of our attack (Windows and Linux Instances)
 
 ---
-
-
-### ZTSA – Internet Access Control - Testing the Solution
-Now that the ZTSA Internet Access Module is enabled, you will find a green status on the ZTSA Client. That means all he internet traffic is being inspected by Trend Micro, and any security risk should be detected and blocked.
-![Endpoint_Deployment](/images/ztsa-internet-status.png)
-
-You can access the following URL (https://wicar.org/test-malware.html) and then check the SSL Certificate used by this application. You will find the original certificate was replaced by the Trend Micro Web Security certificate, which means even the SSL traffic is being analyzed, and any security risk should/could be stopped by the ZTSA Internet Access Infrastructure.
-![Endpoint_Deployment](/images/ztsa-internet-2.png)
-
-Now its time to access malicious URLs and download malicious files. You can do this test using the files available on https://wicar.org/test-malware.html. 
-![Endpoint_Deployment](/images/ztsa-internet-3.png)
-![Endpoint_Deployment](/images/ztsa-internet-4.png)
-![Endpoint_Deployment](/images/ztsa-internet-5.png)
+#### Resource Development
+We used Mitre Caldera to generate the payloads used to compromise our targets
 
 ---
-### ZTSA - Internet Access - Configuring the Zero Trust Secure Access Rules (Automated Respose)
-Now its time to demonstrate that the Trend Micro Zero Trust Platform is capable to continuously monitor all the activities happening on the monitored endpoint. If an malicious or abnormal behavior if detected (like a malware download), a Secure Access Rule could trigger an automated remediation (Example: Isolating the affected Endpoint, Restricting the access to Private Applications, Interacting with Azure AD to disable the affected user account, etc).
+#### Initial Access and Execution
+We deployed the malicious payloads manually to the Windows and Linux Instances. In a Real-world scenario, we could have used a Malicious Email message, including the link to the malicious files. In this way, compromising the target computers.
 
-In this demo we are going to simulate some suspicious activity (access to a malicious website). This event will trigger a Secure Access Rule / Risk Control Rule that will isolate the VPC2_WindowsClient Instance.
+---
+#### Persistence
+Using Mitre Caldera, you can deploy additional backdoors that will ensure you can keep accessing the affected computers in the future:
 
-Before stating the tests, lets create a new ZTSA Risk Control Rule. This rule must have the following conditions (Suspicious Web Activity in Discovered Devices). The action in case an access to malicious websites or malicious file download activity is detected, it to Isolate the affected endpoint.
-![Endpoint_Deployment](/images/ztsa-internet-6.png)
-![Endpoint_Deployment](/images/ztsa-internet-7.png)
-![Endpoint_Deployment](/images/ztsa-internet-8.png)
+In our case, we can run a remote instruction on the affected Linux computer and deploy a secondary agent (bot).
 
-After you create the policy, use the same URLs you've used in the previous step (https://wicar.org/test-malware.html), download some of the available malware samples, and wait a few minutes until the Risk Control rule is triggered and the affected device is isolated.
-.
+{{< youtube id="ECAPmLFwiXY" >}}
+
+---
+#### Privilege Escalation
+Using Mitre Caldera, you can deploy the Technique "UAC bypass registry (T1548.002) - Set a registry key to allow UAC bypass". It will help to to expand the impact of this attack and get additional permissions on the affected OS.
+
+{{< youtube id="o-hCzQjhNLs" >}}
+
+---
+#### Defense Evasion
+Using Mitre Caldera, you can deploy the Technique "Disable Windows Defender All (T1562.001) - Disable Windows Defender All".
+
+{{< youtube id="w5pnVRvGS6k" >}}
+
+---
+#### Credential Access
+Using Mitre Caldera, you can deploy the Technique "Leverage Procdump for lsass memory (T1003.001) - Dump lsass for later use with mimikatz". You may find sensitive information with this technique.
+
+{{< youtube id="syO6uPBEhQc" >}}
+
+---
+#### Discovery
+Using Mitre Caldera, you can deploy the Technique "Find System Network Connections (T1049) - Find System Network Connections". You may find additional targets for this attack (Lateral Movement for example).
+
+{{< youtube id="ReflY0x4k5A" >}}
+
+---
+#### Lateral Movement
+Under development..
+
+
+---
+#### Command & Control
+You can use the same tatics used on the step "Persistence", or even using other customm tools to interact with the C&C Server.
+
+---
+#### Collection
+Using Mitre Caldera, you can deploy the Technique "Find files (T1005) - Locate files deemed sensitive". Using this technique you can search for sensitive date hosted on the affected computers.
+
+{{< youtube id="X2zpomhJNLo" >}}
+
+---
+#### Exfiltration
+Under development..
+
+---
+#### Impact 1
+Using Mitre Caldera, you can deploy the Techniques "Crypto (Monero) Mining (T1496) - Download and execute Monero miner (xmrig) for 1 minute" and "Leave note (T1491) - Create a text file for the user to find". With this two techniques, you can create an impact that will affect the performance and expose the affected server to other risks, and also leave a note to tell the target of the attack about your intentions and what you have done so far.
+
+{{< youtube id="LDqfBhn0DyQ" >}}
+
+#### Impact 2
+Under development..
+
+---
+## Reviewing the Detections 
+Review your Vision One Portal (Risk Insights and XDR / Workbenchs and OAT) searching for the evidences of the instructions executed during this demo.

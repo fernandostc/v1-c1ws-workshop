@@ -5,45 +5,31 @@ weight: 40
 pre: "<b>4. </b>"
 ---
 ## Demo Detection Mode 
-### Lab Architecture
-To simulate a real customer environment, we will use a pre-built CloudFormation template that will create the following resources all in the same Availibility Zone (AZ):
+In this lab, all the Security Controls available on Cloud One Workload Security and Vision One XDR Agent are configured to only generate detection events for all the security incidents detected by the solutions.
 
-* <b>1x VPCs</b>
-    - VPC1
+The idea is to show how both solutions can together help detecting suspicious and malicious events related to Zero Day Attacks.
 
-* <b>1x EC2 Instance Running on VPC2 (Exposed to the internet)</b>
-    * VPC2_WindowsClient
-        * Exposed Services (RDP) - with ZTSA Internet Access Module
+In the next phase of this demo (Prevention Mode), we will show how these security controls, when deployed to detect and stop the attacks, could help detecting and preventing all the stages of the attacks described on this demo.
 
-Notes:
-* 1 The internet access from the VPC2_WindowsClient will be monitored by ZTSA Internet Access Control.
-* 2 When a malicious file download event is detected on the VPC2_WindowsClient Instance is detected. In case a Ransomware event is detection is detected on this computer, a Risk Control Rule will act isolating the computer from the network 
+### Attacking Phase
+In this demo, we are using the Mitre Caldera tool, to help us following the normal/expected attack sequence. The Mitre Caldera helps to deploy instructions based on the Mitre ATT&CK Framework, allowing us to evaluate security solutions based on real-world use cases.
 
-NETWORK DIAGRAM TO BE UPDATED
-![Endpoint_Deployment](/images/ztsa-diagram.png) 
-NETWORK DIAGRAM TO BE UPDATED
+#### What are Tactics in the ATT&CK Framework?
+ATT&CK stands for adversarial tactics, techniques, and common knowledge. The tactics are a modern way of looking at cyberattacks. Rather than looking at the results of an attack, aka an indicator of compromise (IoC), it identifies tactics that indicate an attack is in progress. Tactics are the “why” of an attack technique.
 
----
+The Enterprise ATT&CK matrix has 14 tactics. In this demo, we are covering the following highlighted tactics.
 
-### Creating the base AWS environment using AWS CloudFormation Template
-
-******** If you already deployed and still have access to the demo environment -Zero Trust Private Access-, you can skip this step and use the same demo environment. ********
-
-Using your AWS Account, deploy the Cloud Formation Template “demo-aws-ztsa.yaml” and follow the next instructions. 
-
-<a href="https://console.aws.amazon.com/cloudformation/home#/stacks/new?stackName=ZTSAWorkshop&templateURL=https://visionone.s3.us-west-1.amazonaws.com/demo-aws-ztsa.yaml" target="_blank"><img src="https://cdn.rawgit.com/buildkite/cloudformation-launch-stack-button-svg/master/launch-stack.svg" /></a>
-
-
----
-
-### Enabling the ZTSA Internet Access service on Vision One
-The Zero Trust Internet Access Module is one additional feature available on Vision One. It allows companies to control the Internet Access, mitigating the issues and security risks accessed by the users. It also allows companies to take decisions based on the Risk Index that each user/device could impose to the company.
-
-First, you must enable the Internet Access Service. You can do this using the Vision One Management Console. You can do this by accessing the Zero Trust Secure Access > Internet Access Configuration, and then enabling the Internet Access Control module.
-![Endpoint_Deployment](/images/ztsa-internetaccess.png) 
-
-After you enable the Internet Access Service, make sure you created a HTTPS Inspection Rule (this step is required in order to give full visibility to the ZTSA Internet Access module).
-Be sure you included all URL Categories to the SSL Inspection Rule.
-
-![Endpoint_Deployment](/images/ztsa-ssl1.png) 
-![Endpoint_Deployment](/images/ztsa-ssl2.png) 
+- Reconnaissance
+- Resource Development
+- Initial Access
+- Execution
+- Persistence
+- Privilege Escalation
+- Defense Evasion
+- Credential Access
+- Discovery
+- Lateral Movement
+- Command & Control
+- Collection
+- Exfiltration
+- Impact
