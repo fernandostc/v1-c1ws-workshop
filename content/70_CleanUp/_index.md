@@ -1,8 +1,8 @@
 ---
 title: "Cleanup"
 chapter: false
-weight: 60
-pre: "<b>6. </b>"
+weight: 70
+pre: "<b>7. </b>"
 ---
 
 ### Cleanup your Environment

@@ -1,8 +1,8 @@
 ---
 title: "Conclusions and Results"
-chapter: true
-weight: 50
-pre: "<b>5. </b>"
+chapter: false
+weight: 60
+pre: "<b>6. </b>"
 ---
 
 # Conclusions and Results

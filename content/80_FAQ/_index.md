@@ -1,8 +1,8 @@
 ---
 title: "Frequently Asked Questions"
 chapter: false
-weight: 70
-pre: "<b>7. </b>"
+weight: 80
+pre: "<b>8. </b>"
 ---
 
 > <b>How should I use this material?</b>
