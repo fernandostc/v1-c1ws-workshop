@@ -1,11 +1,10 @@
 ---
-title: "ZTSA Internet Access"
+title: "Detection Mode"
 chapter: false
 weight: 40
 pre: "<b>4. </b>"
 ---
-## Lab Preparation Guide
-
+## Demo Detection Mode 
 ### Lab Architecture
 To simulate a real customer environment, we will use a pre-built CloudFormation template that will create the following resources all in the same Availibility Zone (AZ):
 
