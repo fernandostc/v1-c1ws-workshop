@@ -76,6 +76,7 @@ Using Mitre Caldera, you can deploy the Techniques "Crypto (Monero) Mining (T149
 
 {{< youtube id="LDqfBhn0DyQ" >}}
 
+---
 #### Impact 2
 Under development..
 
