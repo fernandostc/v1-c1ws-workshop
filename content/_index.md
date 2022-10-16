@@ -29,9 +29,9 @@ The workshop is divided into the sections listed below. Plan on setting aside 1:
 
 <span style="color: #4e3eb1;"><i class='fas fa-check fa-xs'></i></span> <b> 3. Lab Preparation (15 minutes)</b>
 
-<span style="color: #4e3eb1;"><i class='fas fa-check fa-xs'></i></span> <b> 4. Demo - Prevention Mode (20 minutes)</b>
+<span style="color: #4e3eb1;"><i class='fas fa-check fa-xs'></i></span> <b> 4. Demo - Detection Mode (20 minutes)</b>
 
-<span style="color: #4e3eb1;"><i class='fas fa-check fa-xs'></i></span> <b> 5. Demo - Detection Mode (20 minutes)</b>
+<span style="color: #4e3eb1;"><i class='fas fa-check fa-xs'></i></span> <b> 5. Demo - Prevention Mode (20 minutes)</b>
 
 <span style="color: #4e3eb1;"><i class='fas fa-check fa-xs'></i></span> <b> 6. CleanUp (5 minutes)</b>
 
