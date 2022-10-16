@@ -49,7 +49,7 @@ References:
 
 ---
 #### Linux Payload
-The first payload we will create is the Windows Payload. You will pack the malicious payload into an executable file, uploading it to filebin.net and then downloading and executing it on the Windows Client.
+The first payload we will create is the Windows Payload. You will create one script based on this payload, then uploading it to filebin.net and then downloading and executing it on the Windows Client.
 
 The following video shows step-by-step how to create this malicious payload and drop it to the Linux Target.
 

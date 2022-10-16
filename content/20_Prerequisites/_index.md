@@ -15,11 +15,11 @@ An <b>AWS Account</b> with <b>AdministratorAccess</b> permission, [Sign up here]
 <b>[Subscribe](https://aws.amazon.com/marketplace/pp/prodview-skoruk3n7ag5w?sr=0-5&ref_=beagle&applicationId=AWS-Marketplace-Console)</b> to the Trend Micro Zero Trust Secure Access service, available on AWS Marketplace.
 
 ---
-#### Trend Micro Vision One Account and Trend Micro Cloud One Workload Security
+#### Trend Micro Vision One and Trend Micro Cloud One Workload Security
 
 We have 3 ways to help customers with Free trial:
 
-> <b>Vision One</b>
+> <b>Vision One Account / Credits</b>
 
 * Contact your Sales Representative, or 
 
@@ -28,7 +28,7 @@ We have 3 ways to help customers with Free trial:
 * If you are a Trend Micro SE, request Vision One credits using [Jarvis](https://jarvis.trendmicro.com).
 
 
-> <b>Cloud One Workload Security</b>
+> <b>Cloud One Workload Security Account / Licenses</b>
 
 * Contact your Sales Representative, or 
 

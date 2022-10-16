@@ -7,6 +7,8 @@ pre: "<b>4.2 </b>"
 ## Windows - Detection Mode
 ---
 
+<b>Before you start this lab, make sure the C1WS Policy attached to the Windows Instance is the "demo > visionone > detection mode" policy.</b>
+
 ### ATT&CK Phases
 #### Reconnaissance
 This step was skipped because we knew the target of our attack (Windows and Linux Instances)
