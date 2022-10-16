@@ -90,3 +90,6 @@ Under development..
 ---
 ## Reviewing the Detections 
 Review your Vision One Portal (Risk Insights and XDR / Workbenchs and OAT) searching for the evidences of the instructions executed during this demo.
+
+{{< youtube id="A-mIm0YG-OM" >}}
+
