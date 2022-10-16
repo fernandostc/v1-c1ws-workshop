@@ -11,7 +11,7 @@ pre: "<b>4.1 </b>"
 
 ### ATT&CK Phases
 #### Reconnaissance
-This step was skipped because we knew the target of our attack (Windows and Linux Instances)
+This step was skipped because we know the target of our attack (Windows and Linux Instances)
 
 ---
 #### Resource Development
