@@ -24,9 +24,11 @@ Parameters:
     Description: (Linux AMI ID) DO NOT CHANGE THIS VALUE
   WindowsUsername:
     Description: AWS - Please provide username to be used when accessing the Windows Instances.
+    Default: trendmicro
     Type: 'String'
   WindowsPassword:
     Description: AWS - Please provide the password to be used when accessing the Windows Instances (8 characters including capital case, lower cases and special characters).
+    Default: Trend@00p$
     Type: 'String'
   C1WSWindowsLink:
     Description: C1WS - Please provide the C1WS Activation Command.
