@@ -60,7 +60,7 @@ Under development..
 
 ---
 #### Command & Control
-You can use the same tatics used on the step "Persistence", or even using other customm tools to interact with the C&C Server.
+You can use the same tatics used on the step "Persistence", or even using other custom tools to interact with the C&C Server.
 
 ---
 #### Collection

@@ -8,53 +8,37 @@ weight: 2
 ### Move faster than your adversaries with powerful purpose-built XDR, attack surface risk management, and zero trust capabilities
 ![TrendMicro](/images/logo.png)
 
-In this workshop, you’ll learn how to leverage the Trend Micro Vision One Platform, in conjuction with Cloud One Workload Security, to rapidly detect and respond to suspicious behavior, ransomware, disruption, and critical attacks that have evaded protection technology and proactive risk mitigation measures. 
+With this guide, you’ll learn how to use Trend Micro Vision One and Trend Micro Cloud One Workload Security to detect and prevent attacks, even when they don’t rely on malicious code (0-day malware), like, for example, using Powershell or shell scripts, or other OS commands to compromise, do lateral movement, data exfiltration, and others.
+
+Cloud One Workload Security will be initially deployed to detect (not taking actions), in this way allowing the attacker to execute all the malicious instructions they want. Using Vision One, you will find that some of the activities that were not detected/considered malicious by Cloud One Workload Security were detected and reported by Vision One. This will happen because of the nature of the instructions used by the attacker, which are not necessarily malicious (they are just Windows or Linux instructions/commands). Still, when found or identified in specific contexts, they could be part of attacks.
+
+The second phase of this demo will require the Cloud One Workload Security policy to be changed. The new policy will activate and enable the protection, so you can expect some of the tests you have done in the initial phase of this demo to be detected and stopped by Cloud One Workload Security and the others (non-malicious instructions), detected by Vision One.
 
 --------
 ## Use Cases Covered in this Workshop
 With this workshop, you can simulate Real World uses cases like:
 
-> <b>1- </b>Company running important business applications on an EC2 Instance. An administrator by mistake will download and run a 0-day malware that will give the control of the affected computer to attackers. We will show in this demo how C1WS in conjunction with Vision One can help detecting suspicious behaviors related to 0-day attacks, and mitigate/remediate them as soon as they are detected by the Trend Micro components in place.
+<b>- Use Case A - A Windows Server (EC2 Instance)</b>
 
-> <b>More to come..</b>
-
---------
-## Workshop Structure
-
-The workshop is divided into the sections listed below. Plan on setting aside 1:30 hour to complete the full workshop.
-
-<span style="color: #4e3eb1;"><i class='fas fa-check fa-xs'></i></span> <b> 1. Introduction (10 minutes)</b> 
-
-<span style="color: #4e3eb1;"><i class='fas fa-check fa-xs'></i></span> <b> 2. Prerequisites (15 minutes)</b> 
-
-<span style="color: #4e3eb1;"><i class='fas fa-check fa-xs'></i></span> <b> 3. Lab Preparation (15 minutes)</b>
-
-<span style="color: #4e3eb1;"><i class='fas fa-check fa-xs'></i></span> <b> 4. Demo - Detection Mode (20 minutes)</b>
-
-<span style="color: #4e3eb1;"><i class='fas fa-check fa-xs'></i></span> <b> 5. Demo - Prevention Mode (20 minutes)</b>
-
-<span style="color: #4e3eb1;"><i class='fas fa-check fa-xs'></i></span> <b> 6. CleanUp (5 minutes)</b>
+An administrator accidentally compromised a Windows Server, when the administrator download a compromised version of Mozilla Firefox.will download and run a 0-day malware that will give the control of the affected computer to attackers. We will show in this demo how C1WS in conjunction with Vision One can help detecting suspicious behaviors related to 0-day attacks, and mitigate/remediate them as soon as they are detected by the Trend Micro components in place.
 
 --------
+## Demo Structure
+The demo is divided into the sections listed below. Plan on setting aside 2 hours to complete the full workshop.
 
+<b>1. Introduction (5 minutes)</b>
 
-## Who should attend
-- Network Engineers/Architects
-- Cloud Engineers/Architects
-- Solution Architects
-- Information Security Teams
-- SOC Engineers
+<b>2. Prerequisites (5 minutes)</b>
 
---------
+<b>3. Lab Preparation (10 minutes)</b>
 
-### **Background knowledge for the Workshop**
-- Basic knowledge of AWS
-- Basic security knowledge
-- Basic knowledge of cyber security
-- Basic knowledge of attacking tools (blue team x red team)
+<b>4. Detection Mode (20 minutes)</b>
 
---------
+<b>5. Prevention Mode (20 minutes)</b>
 
+<b>6. CleanUp (10 minutes)</b>
+
+---------
 ### **Additional Help**
 For any additional help please reach out to: 
 
@@ -62,7 +46,7 @@ For any additional help please reach out to:
 - Andre Fernandes - Email: andre_fernandes@trendmicro.com
 
 <p>
-<a  href="mailto:fernando_cardoso@trendmicro.com;andre_fernandes@trendmicro.com?subject=Vision One - ZTSA Workshop"  target="_blank" rel="noopener noreferrer"  class="btn btn-default">  
+<a  href="mailto:fernando_cardoso@trendmicro.com;andre_fernandes@trendmicro.com?subject=Vision One - C1WS Workshop"  target="_blank" rel="noopener noreferrer"  class="btn btn-default">  
   Talk to us
   <i class="fas fa-paper-plane"></i>
 </a>
@@ -75,8 +59,3 @@ For any additional help please reach out to:
 </li>
 </ul>
 <p>Built with <i class="far fa-heart" style="color: red;"></i> by Trend Micro Team</p>
-
---------
-
-Before we dive in, let’s go through a refresher on the core concepts explored in this workshop.
-..
